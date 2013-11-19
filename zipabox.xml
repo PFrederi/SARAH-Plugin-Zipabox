@@ -1,0 +1,54 @@
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruleZipabox" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+  <rule id="ruleZipabox" scope="public">
+    <example>Sarah allume la lampe du salon</example>
+    <tag>out.action=new Object(); </tag>
+   
+   <item>Sarah</item>
+
+    <one-of>
+        <item>met à jour la zipabox<tag>out.action.request="update"</tag></item>
+        <item>allume<tag>out.action.request="set";out.action.p_body="true"</tag></item>
+        <item>eteint<tag>out.action.request="set";out.action.p_body="false"</tag></item>
+        <item>joue la scene<tag>out.action.request="set";</tag></item>
+		<item>ouvre<tag>out.action.request="set";</tag></item>
+		<item>ferme<tag>out.action.request="set";</tag></item>
+		<item>donne moi le niveau de batterie de<tag>out.action.request="get";</tag></item>
+    </one-of>
+ 
+
+<!--  Modules § -->
+  <one-of>
+    <item>XXXX<tag>out.action.typ="modules";out.action.uuid="XXXX";out.action.attribute="11"</tag></item>
+   
+<!--SCENES-->
+    <item>Tout eteindre<tag>out.action.typ="scenes";out.action.uuid="XXXX"</tag></item>
+
+<!--METERS-->
+    <item>le capteur<tag>out.action.typ="meter";out.action.uuid="XXX"</tag></item>
+
+<!--SENSORS-->
+  </one-of>
+<!-- § -->
+
+
+
+    <item repeat="0-1" weight="1.2">
+    <one-of>
+        <item>zéro pourcent<tag>out.action.p_body="0"</tag></item>
+        <item>dix pourcent<tag>out.action.p_body="10"</tag></item>
+        <item>vingt pourcent<tag>out.action.p_body="20"</tag></item>
+        <item>trente pourcent<tag>out.action.p_body="30"</tag></item>
+        <item>quarante pourcent<tag>out.action.p_body="40"</tag></item>
+        <item>cinquante pourcent<tag>out.action.p_body="50"</tag></item>
+        <item>soixante pourcent<tag>out.action.p_body="60"</tag></item>
+        <item>soixante dix pourcent<tag>out.action.p_body="70"</tag></item>
+        <item>quatre vingt pourcent<tag>out.action.p_body="80"</tag></item>
+        <item>quatre vingt dix pourcent<tag>out.action.p_body="90"</tag></item>
+        <item>cent pourcent<tag>out.action.p_body="100"</tag></item>
+    </one-of>
+    </item>
+
+    <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/zipabox";</tag>
+  </rule>
+</grammar>
+              

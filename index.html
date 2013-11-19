@@ -1,0 +1,37 @@
+﻿<html>
+<body>
+<h1>Documentation Plugin ZIPABOX pour SARAH</h1>
+<p><br>
+  date : 12/11/2013<br>
+  version : 0.2<br>
+  auteur : Frédéric P.<br>
+  <br>
+Il s'agit d'une première mouture qui permet de contrôler un module ou de lancer une scène via la ZIPABOX <br>
+Pour le moment, l'API n'est  pas accessible en local. </p>
+<p>ZIPATO, devrait permettre l'accès en local après passage du firmware en v 1.0 <br>
+  <br>
+  
+  <b>1. FONCTIONNEMENT  </b><br>
+<item>Après avoir renseigné votre login et mot de passe dans les paramètres, mettez à jour le fichier le fichier XML par "SARAH met à jour la ZIPABOX s'il te plait"</item>.</p>
+<p>Le XML contient les &quot;uuid&quot; des modules et des scènes.</p>
+<p>Le nom des modules et des scénes est directement récupéré depuis leur paramètre dans l'interface ZIPATO.</p>
+<p>Lors de l'envoi d'une commande, on vérifie qu'il y a bien une session authentifiée. Dans le cas, contraire le module initialise une connection et obtient JSESSIONID. Ce paramètre doit être renvoyé à chaque commande pour validation. Lors d'une requête via un navigateur, cela ne pose pas de problème puisqu'il est stocké dans un cookie. Avec SARAH, je n'ai pour le moment pas réussi à renvoyer un cookie, il semblerait qu'il y ait un souci avec le module &quot;cookie-jar&quot; préinstallé. L'option retenue a donc été de renvoyé JSESSIONID à la fin de chaque requête.</p>
+<p>Dans le cas où le numéro de session ne serait plus disponible, on peut dans ce cas changer le js afin d'authentifier à chaque fois la connection et obtenir une session authentifiée, mais cette solution &quot;ralentie&quot; l'action.<br>
+  <br>
+  <b>2. SUIVI DES VERSIONS</b><br>
+  <item>v 0.1 : [X] Version de base<br>
+    v 0.12: [X] Authentification valide par COOKIE (Merci Julien !)<br>
+    v 0.15: [X] Ajout des modules dimmables<br>
+    v 0.20: [X] Possibilité de demander le niveau de batterie d'un module<br>
+  <br>
+ 
+  </item><b>3. AMELIORATIONS PREVUES</b><br>
+Récupérer les valeurs de température, humidité, lux pour intérrogations des valeurs. Récupérer l'état des modules (allumé-éteint).<br>
+</p>
+<p><b>3. CODE</b><br>
+  Le code n'est sans doute pas propre ou peut largement être optimisé, mais il s'agit là de mon premier module et suis débutant avec le js ou node.js. Toutes remarques, suggestions ou modifications sont les bienvenues;</p>
+<p>Merci à Vincent FRESNEL, J.P pour leur module et démo qui m'ont permis d'avancer. Un grand merci à Julien CHENAVAS pour la correction du code et son optimisation !<br>
+  <br>
+</p>
+</body>
+</html>
