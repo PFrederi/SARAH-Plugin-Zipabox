@@ -6,8 +6,7 @@
       "api_user"   : "[FIX ME]",
       "api_secret" : "[FIX ME]",
       "api_web_adr": "https://my.zipato.com:443/zipato-web/rest/",
-      "rep_inst_sarah" : "C:/WSRRelease30/",
-      "version": "0.1"
-    }
+      "rep_inst_sarah" : "C:/WSRRelease30/"
+      }
   }
 }
